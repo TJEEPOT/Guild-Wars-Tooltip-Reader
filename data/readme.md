@@ -17,7 +17,7 @@ The key for each entry is the item name formatted for use on the wiki (see above
 The value for each entry is a dict of the information found on the given page. There are no guaranteed keys within this dict, so all should be checked before reading (and writing). Current valid keys are:
 - "common_mats": a list of dicts representing the common materials the parent item salvages into. Each dict can contain the keys: 
     - "item_name": the name of the item the parent item salvages into 
-    - "avg_count": an integer representing the average number of the above material that the parent item salvages into
+    - "avg_count": an integer representing the average number of the above material that the parent item salvages into. If 0, this data hasn't been added yet.
 - "rare_mats": as above, a list of dicts for each rare material the parent item salvages into. Keys within each dict are:
     - "item_name": the name of the item the parent item salvages into 
     - "avg_count": an integer representing the average number of the above material that the parent item salvages into. If 0, this data hasn't been added yet.
