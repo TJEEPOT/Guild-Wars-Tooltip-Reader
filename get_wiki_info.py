@@ -76,9 +76,8 @@ def check_for_disambiguation(response):
         print(page_names)
 
         # Transform the names into wiki page names and return them
-        for unprocessed_name in page_names:
-            unprocessed_name.replace(" ", "_")
-        return page_names
+        processed_names = [format_item_to_wiki_name(name) for name in page_names]
+        return processed_names
     return None
 
 def get_materials_from_page(page):
