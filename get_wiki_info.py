@@ -20,19 +20,22 @@ from bs4 import BeautifulSoup
 import re
 
 def transform_tooltip_to_wiki_name(text) -> str:
-    first_line = text.partition("\n")[0]  # Extract the first line of the tooltip text
+    item_name = text.partition("\n")[0]  # Extract the first line of the tooltip text
+    return format_item_to_wiki_name(item_name)
 
+def format_item_to_wiki_name(item_name):
     # Remove numbers from the beginning of the first line if they exist
-    new_first_line = re.sub(r"(.*\d)\s*", "", first_line)
+    new_item_name = re.sub(r"(.*\d)\s*", "", item_name)
 
     # Remove 's' characters from the end of each word if a number was found
-    if first_line != new_first_line:
-        words = new_first_line.split()
+    if item_name != new_item_name:
+        words = new_item_name.split()
         processed_words = [re.sub(r"(s)\b", "", word) for word in words]
-        first_line = " ".join(processed_words)
+        item_name = " ".join(processed_words)
 
-    item_name = first_line.replace(" ", "_") # Adjust the item name to be in line with what's expected for the wiki
-    return item_name
+    wiki_name = item_name.replace(" ", "_") # Adjust the item name to be in line with what's expected for the wiki
+    return wiki_name
+
 
 def get_requested_page(pagename) -> list[dict[str:str, str:str]]:
     """Takes the name of a wiki page (e.g. Great_Axe) and returns a list of dicts, where each dict has the fields "page_name" and "response". This function correctly handles disambiguation pages by searching and returning the details of every page linked on the disambiguation page, within that list."""

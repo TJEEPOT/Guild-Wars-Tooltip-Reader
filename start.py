@@ -68,7 +68,9 @@ def run_process(screenshot):
         if len(pages) > 1:
             all_page_names = []
             for page_dict in pages:
-                all_page_names.append(page_dict["page_name"])
+                # Ensure the page name is in the correct format
+                corrected_name = wiki_lookup.format_item_to_wiki_name(page_dict["page_name"])
+                all_page_names.append(corrected_name)
             disambiguation_dict[item_name] = all_page_names
         
         for page in pages:
