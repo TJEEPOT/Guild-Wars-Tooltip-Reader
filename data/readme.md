@@ -30,10 +30,10 @@ The value for each entry is a dict of the information found on the given page. T
             {"item_name":"Iron Ingot", "avg_count":6}, 
             {"item_name":"Pile of Glittering Dust", "avg_count":4}, 
             {"item_name":"Wood Plank", "avg_count":6}
-            ],
+        ],
         "rare_mats":[
             {"item_name":"Steel Ingots", "avg_count":1}
-            ]
+        ]
     }
     "Sandblasted_Lodestone":{
         "common_mats":[
@@ -41,4 +41,18 @@ The value for each entry is a dict of the information found on the given page. T
         ]
         "nicholas_date":"2023-06-05"
     }
+}
+
+# materials.json #
+A dict of all salvage materials that can be bought and sold to a vendor.
+The key is the name of a single stack of a material, not edited for wiki use.
+The value is a dict of information about that material. Current valid keys are:
+- "type": either "common" or "rare", corresponding to the rarity of the material (blue or purple)
+- "buy": integer representing the gold price a vendor will buy this material for (1 platinum = 1000g). This price is for 10x common materials, and 1x rare.
+- "sell": integer representing the gold price a vendor will sell this material for. Same rules as with "buy".
+
+## Structure Example ##
+{
+    "Iron Ingot":{"type":"common", "buy":150, "sell":50},
+    "Steel Ingot":{"type":"rare", "buy":1200, "sell":700}
 }
