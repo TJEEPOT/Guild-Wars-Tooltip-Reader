@@ -17,5 +17,123 @@
         "average_count": 0
       }
     ]
+  },
+  "Aureate_Aegis": {
+    "materials": [
+      {
+        "item_name": "Iron Ingots",
+        "type": "common",
+        "average_count": 0
+      },
+      {
+        "item_name": "Steel Ingots",
+        "type": "rare",
+        "average_count": 0
+      }
+    ]
+  },
+  "Elonian_Daggers_(common)": {
+    "materials": [
+      {
+        "item_name": "Iron Ingots",
+        "type": "common",
+        "average_count": 0
+      },
+      {
+        "item_name": "Wood Plank",
+        "type": "common",
+        "average_count": 0
+      },
+      {
+        "item_name": "Steel Ingots",
+        "type": "rare",
+        "average_count": 0
+      }
+    ]
+  },
+  "Elonian_Daggers_(uncommon)": {
+    "materials": [
+      {
+        "item_name": "Iron Ingots",
+        "type": "common",
+        "average_count": 0
+      },
+      {
+        "item_name": "Wood Planks",
+        "type": "common",
+        "average_count": 0
+      },
+      {
+        "item_name": "Steel Ingots",
+        "type": "rare",
+        "average_count": 0
+      }
+    ]
+  },
+  "Elonian_Daggers_(rare)": {
+    "materials": [
+      {
+        "item_name": "Iron Ingots",
+        "type": "common",
+        "average_count": 0
+      },
+      {
+        "item_name": "Wood Plank",
+        "type": "common",
+        "average_count": 0
+      },
+      {
+        "item_name": "Steel Ingots",
+        "type": "rare",
+        "average_count": 0
+      }
+    ]
+  },
+  "Water_Staff_(Canthan)": {
+    "materials": [
+      {
+        "item_name": "Iron Ingots",
+        "type": "common",
+        "average_count": 0
+      },
+      {
+        "item_name": "Steel Ingots",
+        "type": "rare",
+        "average_count": 0
+      }
+    ]
+  },
+  "Water_Staff_(core)": {
+    "materials": [
+      {
+        "item_name": "Iron Ingots",
+        "type": "common",
+        "average_count": 0
+      },
+      {
+        "item_name": "Pile of Glittering Dust",
+        "type": "common",
+        "average_count": 0
+      },
+      {
+        "item_name": "Wood Planks",
+        "type": "common",
+        "average_count": 0
+      },
+      {
+        "item_name": "Steel Ingots",
+        "type": "rare",
+        "average_count": 0
+      }
+    ]
+  },
+  "Water_Staff_(Tyrian)": {
+    "materials": [
+      {
+        "item_name": "Wood Planks",
+        "type": "common",
+        "average_count": 0
+      }
+    ]
   }
 }
