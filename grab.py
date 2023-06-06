@@ -57,10 +57,9 @@ def get_tooltip(image:Image):
         print("Saved contours as output\\contours.png")
 
     # Sort the contours based on their area
-    #filtered_contours = [cnt for cnt in contours if cv2.contourArea(cnt) > (max_width * max_height) / 2]
     sorted_contours = sorted(contours, key=cv2.contourArea, reverse=True)
     
-    # Find the contour with the largest area within the expected bounds
+    # Find the contour with the largest area within the expected minimum bounds
     tooltip_contour = None
     min_width = 50
     min_height = 30
