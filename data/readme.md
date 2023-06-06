@@ -44,11 +44,25 @@ A dict of all salvage materials that can be bought and sold to a vendor.
 The key is the name of a single stack of a material, not edited for wiki use.
 The value is a dict of information about that material. Current valid keys are:
 - "type": either "common" or "rare", corresponding to the rarity of the material (blue or purple).
-- "buy": integer representing the gold price a vendor will buy this material for (1 platinum = 1000g). This price is for 10x common materials, and 1x rare.
-- "sell": integer representing the gold price a vendor will sell this material for. Same rules as with "buy".
+- "buy": integer representing the gold price a player can buy this item from a (Rare) Material Trader for (1 platinum = 1000g). This price is for 10x common materials, and 1x rare.
+- "sell": integer representing the gold price a player can sell this material to a (Rare) Material Trader for. Same rules as with "buy".
 
 ## Structure Example ##
 {
     "Iron Ingot":{"type":"common", "buy":150, "sell":50},
     "Steel Ingot":{"type":"rare", "buy":1200, "sell":700}
+}
+
+# rare.json #
+A dict of items which are desirable to trade for some people. They are arranged in groups as detailed below.
+Initial keys are the sections headers. Current Valid keys are as follows:
+- "title": list where each entry is a list of words desirable in the item title. All words should be matched in one item
+- "tooltip": list where each entry is a list of words desirable somewhere in the item tooltip.
+- "mods": list of desirable weapon mods.
+
+## Structure Example ##
+{
+    "title":[["Axe", "Eaglecrest"], ["Bow", "Eternal"], ["Bow", "Storm"]],
+    "tooltip":[["Shield", "vs Demons", "Tactics", "HP", "while Enchanted"], ["Shield", "Inscribable", "Requires 8", "16 Armor Rating"]]
+    "mods":["Aptitude Not Attitude", "Forget Me Not"]
 }
