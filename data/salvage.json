@@ -1,0 +1,21 @@
+{
+  "Margonite_Armor": {
+    "materials": [
+      {
+        "item_name": "Iron Ingots",
+        "type": "common",
+        "average_count": 0
+      },
+      {
+        "item_name": "Tanned Hide Squares",
+        "type": "common",
+        "average_count": 0
+      },
+      {
+        "item_name": "Steel Ingots",
+        "type": "rare",
+        "average_count": 0
+      }
+    ]
+  }
+}
