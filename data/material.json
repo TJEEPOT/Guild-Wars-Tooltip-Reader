@@ -1,0 +1,182 @@
+{
+  "Bone": {
+    "type": "common",
+    "buy": 410,
+    "sell": 310
+  },
+  "Iron Ingot": {
+    "type": "common",
+    "buy": 240,
+    "sell": 140
+  },
+  "Tanned Hide Square": {
+    "type": "common",
+    "buy": 100,
+    "sell": 30
+  },
+  "Scale": {
+    "type": "common",
+    "buy": 250,
+    "sell": 150
+  },
+  "Chitin Fragment": {
+    "type": "common",
+    "buy": 100,
+    "sell": 30
+  },
+  "Bolt of Cloth": {
+    "type": "common",
+    "buy": 100,
+    "sell": 30
+  },
+  "Wood Plank": {
+    "type": "common",
+    "buy": 100,
+    "sell": 40
+  },
+  "Granite Slab": {
+    "type": "common",
+    "buy": 100,
+    "sell": 30
+  },
+  "Pile of Glittering Dust": {
+    "type": "common",
+    "buy": 700,
+    "sell": 550
+  },
+  "Plant Fiber": {
+    "type": "common",
+    "buy": 160,
+    "sell": 80
+  },
+  "Feather": {
+    "type": "common",
+    "buy": 270,
+    "sell": 160
+  },
+  "Fur Square": {
+    "type": "rare",
+    "buy": 460,
+    "sell": 50
+  },
+  "Bolt of Linen": {
+    "type": "rare",
+    "buy": 480,
+    "sell": 50
+  },
+  "Bolt of Damask": {
+    "type": "rare",
+    "buy": 800,
+    "sell": 50
+  },
+  "Bolt of Silk": {
+    "type": "rare",
+    "buy": 150,
+    "sell": 50
+  },
+  "Glob of Ectoplasm": {
+    "type": "rare",
+    "buy": 4900,
+    "sell": 50
+  },
+  "Steel Ingot": {
+    "type": "rare",
+    "buy": 180,
+    "sell": 80
+  },
+  "Deldrimor Steel Ingot": {
+    "type": "rare",
+    "buy": 1900,
+    "sell": 1000
+  },
+  "Monstrous Claw": {
+    "type": "rare",
+    "buy": 3500,
+    "sell": 2000
+  },
+  "Monstrous Eye": {
+    "type": "rare",
+    "buy": 800,
+    "sell": 600
+  },
+  "Monstrous Fang": {
+    "type": "rare",
+    "buy": 2600,
+    "sell": 2100
+  },
+  "Ruby": {
+    "type": "rare",
+    "buy": 2500,
+    "sell": 50
+  },
+  "Sapphire": {
+    "type": "rare",
+    "buy": 2500,
+    "sell": 50
+  },
+  "Diamond": {
+    "type": "rare",
+    "buy": 500,
+    "sell": 50
+  },
+  "Onyx Gemstone": {
+    "type": "rare",
+    "buy": 500,
+    "sell": 50
+  },
+  "Lump of Charcoal": {
+    "type": "rare",
+    "buy": 340,
+    "sell": 250
+  },
+  "Obsidian Shard": {
+    "type": "rare",
+    "buy": 3800,
+    "sell": 50
+  },
+  "Tempered Glass Vial": {
+    "type": "rare",
+    "buy": 370,
+    "sell": 50
+  },
+  "Leather Square": {
+    "type": "rare",
+    "buy": 210,
+    "sell": 110
+  },
+  "Elonian Leather Square": {
+    "type": "rare",
+    "buy": 550,
+    "sell": 50
+  },
+  "Vial of Ink": {
+    "type": "rare",
+    "buy": 550,
+    "sell": 50
+  },
+  "Roll of Parchment": {
+    "type": "rare",
+    "buy": 170,
+    "sell": 70
+  },
+  "Roll of Vellum": {
+    "type": "rare",
+    "buy": 440,
+    "sell": 50
+  },
+  "Spiritwood Plank": {
+    "type": "rare",
+    "buy": 120,
+    "sell": 50
+  },
+  "Amber Chunk": {
+    "type": "rare",
+    "buy": 800,
+    "sell": 50
+  },
+  "Jadeite Shard": {
+    "type": "rare",
+    "buy": 1300,
+    "sell": 50
+  }
+}

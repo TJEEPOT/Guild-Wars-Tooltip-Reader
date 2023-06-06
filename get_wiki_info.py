@@ -20,19 +20,22 @@ from bs4 import BeautifulSoup
 import re
 
 def transform_tooltip_to_wiki_name(text) -> str:
-    first_line = text.partition("\n")[0]  # Extract the first line of the tooltip text
+    item_name = text.partition("\n")[0]  # Extract the first line of the tooltip text
+    return format_item_to_wiki_name(item_name)
 
+def format_item_to_wiki_name(item_name):
     # Remove numbers from the beginning of the first line if they exist
-    new_first_line = re.sub(r"(.*\d)\s*", "", first_line)
+    new_item_name = re.sub(r"(.*\d)\s*", "", item_name)
 
     # Remove 's' characters from the end of each word if a number was found
-    if first_line != new_first_line:
-        words = new_first_line.split()
+    if item_name != new_item_name:
+        words = new_item_name.split()
         processed_words = [re.sub(r"(s)\b", "", word) for word in words]
-        first_line = " ".join(processed_words)
+        item_name = " ".join(processed_words)
 
-    item_name = first_line.replace(" ", "_") # Adjust the item name to be in line with what's expected for the wiki
-    return item_name
+    wiki_name = item_name.replace(" ", "_") # Adjust the item name to be in line with what's expected for the wiki
+    return wiki_name
+
 
 def get_requested_page(pagename) -> list[dict[str:str, str:str]]:
     """Takes the name of a wiki page (e.g. Great_Axe) and returns a list of dicts, where each dict has the fields "page_name" and "response". This function correctly handles disambiguation pages by searching and returning the details of every page linked on the disambiguation page, within that list."""
@@ -73,12 +76,11 @@ def check_for_disambiguation(response):
         print(page_names)
 
         # Transform the names into wiki page names and return them
-        for unprocessed_name in page_names:
-            unprocessed_name.replace(" ", "_")
-        return page_names
+        processed_names = [format_item_to_wiki_name(name) for name in page_names]
+        return processed_names
     return None
 
-def get_materials_from_page(page):
+def get_materials_from_page(page) -> dict[list[dict]]:
     # Create a BeautifulSoup object to parse the HTML content
     soup = BeautifulSoup(page.text, 'html.parser')
 
@@ -89,29 +91,27 @@ def get_materials_from_page(page):
     rows = table.find_all('tr')
 
     # Find the common and rare crafting materials:
-    common_materials = []
-    rare_materials = []
+    materials = []
     for row in rows:
-        if 'common' in row.text.lower():
-            common_materials = _get_materials(row)
+        if "common salvage" in row.text.lower():
+            materials.extend(_get_materials(row, "common"))
+        elif "rare salvage" in row.text.lower():
+            materials.extend(_get_materials(row, "rare"))
 
-        elif 'rare' in row.text.lower():
-            rare_materials = _get_materials(row)
+    return {"materials": materials}
 
-    return common_materials, rare_materials
-
-def _get_materials(row):
+def _get_materials(row, material_type) -> list[dict]:
     materials = []
     item = row.find_next('td')
     if item:
         mats = item.find_all('a')
         for mat in mats:
-            materials.append(mat.text) # Get the text content of the <a> tag
-
+            if (mat.text != None) and (mat.text != "") and (mat.text != " "):
+                count = 0 # TODO: grab the average count from the page around here.
+                materials.append({"item_name":mat.text, "type":material_type, "average_count":count}) # Get the text content of the <a> tag
     return materials
 
 if __name__ == "__main__":
-    great_axe_page = get_requested_page("Great_Axe")[0] # Great_Axe / Water_Staff
-    common_mats, rare_mats = get_materials_from_page(great_axe_page)
-    print(common_mats)
-    print(rare_mats)
+    pages = get_requested_page("Great_Axe")[0] # Great_Axe / Water_Staff
+    materials = get_materials_from_page([page for page in pages])
+    print(materials)

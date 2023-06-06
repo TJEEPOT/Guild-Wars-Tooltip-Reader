@@ -26,7 +26,7 @@ def take_screenshot():
     mouse_x, mouse_y = pyautogui.position() # Get the mouse pointer position
 
     # Define the offset for the tooltip region
-    max_width = 450  # Width of the tooltip region
+    max_width = 500  # Width of the tooltip region
     max_height = 200  # Height of the tooltip region
     offset_x = 6 # Offset in the x-axis (nudged right)
     offset_y = -6 - max_height # Offset in the y-axis (nudged up)
@@ -57,10 +57,9 @@ def get_tooltip(image:Image):
         print("Saved contours as output\\contours.png")
 
     # Sort the contours based on their area
-    #filtered_contours = [cnt for cnt in contours if cv2.contourArea(cnt) > (max_width * max_height) / 2]
     sorted_contours = sorted(contours, key=cv2.contourArea, reverse=True)
     
-    # Find the contour with the largest area within the expected bounds
+    # Find the contour with the largest area within the expected minimum bounds
     tooltip_contour = None
     min_width = 50
     min_height = 30
