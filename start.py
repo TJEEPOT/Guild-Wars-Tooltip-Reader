@@ -20,6 +20,8 @@ import get_wiki_info as wiki_lookup
 import transfer_data
 import queue
 import threading
+from colorama import just_fix_windows_console
+
 
 from pynput import keyboard
 
@@ -128,6 +130,9 @@ def screenshot_processor(queue):
 # Enable debug to get additional test messages.
 debug = False
 
+# Fix ANSI color codes on Windows 10 or higher:
+just_fix_windows_console()
+
 # Create a queue to store the requests
 request_queue = queue.Queue()
 
@@ -139,7 +144,7 @@ disambiguation_dict = transfer_data.from_json("data\disambiguation.json")
 salvage_dict =        transfer_data.from_json("data\salvage.json")
 materials_dict =      transfer_data.from_json("data\material.json")
 
-# Start listening for the "F5" key press
+# Start listening for the "F5" or "F6" key press
 listener = keyboard.Listener(on_press=on_key_press)
 listener.start()
 
