@@ -80,7 +80,7 @@ def check_for_disambiguation(response):
         return processed_names
     return None
 
-def get_materials_from_page(page):
+def get_materials_from_page(page) -> dict[list[dict]]:
     # Create a BeautifulSoup object to parse the HTML content
     soup = BeautifulSoup(page.text, 'html.parser')
 
@@ -91,29 +91,27 @@ def get_materials_from_page(page):
     rows = table.find_all('tr')
 
     # Find the common and rare crafting materials:
-    common_materials = []
-    rare_materials = []
+    materials = []
     for row in rows:
-        if 'common' in row.text.lower():
-            common_materials = _get_materials(row)
+        if "common salvage" in row.text.lower():
+            materials.extend(_get_materials(row, "common"))
+        elif "rare salvage" in row.text.lower():
+            materials.extend(_get_materials(row, "rare"))
 
-        elif 'rare' in row.text.lower():
-            rare_materials = _get_materials(row)
+    return {"materials": materials}
 
-    return common_materials, rare_materials
-
-def _get_materials(row):
+def _get_materials(row, material_type) -> list[dict]:
     materials = []
     item = row.find_next('td')
     if item:
         mats = item.find_all('a')
         for mat in mats:
-            materials.append(mat.text) # Get the text content of the <a> tag
-
+            if (mat.text != None) and (mat.text != "") and (mat.text != " "):
+                count = 0 # TODO: grab the average count from the page around here.
+                materials.append({"item_name":mat.text, "type":material_type, "average_count":count}) # Get the text content of the <a> tag
     return materials
 
 if __name__ == "__main__":
-    great_axe_page = get_requested_page("Great_Axe")[0] # Great_Axe / Water_Staff
-    common_mats, rare_mats = get_materials_from_page(great_axe_page)
-    print(common_mats)
-    print(rare_mats)
+    pages = get_requested_page("Great_Axe")[0] # Great_Axe / Water_Staff
+    materials = get_materials_from_page([page for page in pages])
+    print(materials)
