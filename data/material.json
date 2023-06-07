@@ -4,12 +4,12 @@
     "buy": 410,
     "sell": 310
   },
-  "Iron Ingot": {
+  "Iron_Ingot": {
     "type": "common",
     "buy": 240,
     "sell": 140
   },
-  "Tanned Hide Square": {
+  "Tanned_Hide_Square": {
     "type": "common",
     "buy": 100,
     "sell": 30
@@ -19,32 +19,32 @@
     "buy": 250,
     "sell": 150
   },
-  "Chitin Fragment": {
+  "Chitin_Fragment": {
     "type": "common",
     "buy": 100,
     "sell": 30
   },
-  "Bolt of Cloth": {
+  "Bolt_of_Cloth": {
     "type": "common",
     "buy": 100,
     "sell": 30
   },
-  "Wood Plank": {
+  "Wood_Plank": {
     "type": "common",
     "buy": 100,
     "sell": 40
   },
-  "Granite Slab": {
+  "Granite_Slab": {
     "type": "common",
     "buy": 100,
     "sell": 30
   },
-  "Pile of Glittering Dust": {
+  "Pile_of_Glittering_Dust": {
     "type": "common",
     "buy": 700,
     "sell": 550
   },
-  "Plant Fiber": {
+  "Plant_Fiber": {
     "type": "common",
     "buy": 160,
     "sell": 80
@@ -54,52 +54,52 @@
     "buy": 270,
     "sell": 160
   },
-  "Fur Square": {
+  "Fur_Square": {
     "type": "rare",
     "buy": 460,
     "sell": 50
   },
-  "Bolt of Linen": {
+  "Bolt_of_Linen": {
     "type": "rare",
     "buy": 480,
     "sell": 50
   },
-  "Bolt of Damask": {
+  "Bolt_of_Damask": {
     "type": "rare",
     "buy": 800,
     "sell": 50
   },
-  "Bolt of Silk": {
+  "Bolt_of_Silk": {
     "type": "rare",
     "buy": 150,
     "sell": 50
   },
-  "Glob of Ectoplasm": {
+  "Glob_of_Ectoplasm": {
     "type": "rare",
     "buy": 4900,
     "sell": 50
   },
-  "Steel Ingot": {
+  "Steel_Ingot": {
     "type": "rare",
     "buy": 180,
     "sell": 80
   },
-  "Deldrimor Steel Ingot": {
+  "Deldrimor_Steel_Ingot": {
     "type": "rare",
     "buy": 1900,
     "sell": 1000
   },
-  "Monstrous Claw": {
+  "Monstrous_Claw": {
     "type": "rare",
     "buy": 3500,
     "sell": 2000
   },
-  "Monstrous Eye": {
+  "Monstrous_Eye": {
     "type": "rare",
     "buy": 800,
     "sell": 600
   },
-  "Monstrous Fang": {
+  "Monstrous_Fang": {
     "type": "rare",
     "buy": 2600,
     "sell": 2100
@@ -119,62 +119,62 @@
     "buy": 500,
     "sell": 50
   },
-  "Onyx Gemstone": {
+  "Onyx_Gemstone": {
     "type": "rare",
     "buy": 500,
     "sell": 50
   },
-  "Lump of Charcoal": {
+  "Lump_of_Charcoal": {
     "type": "rare",
     "buy": 340,
     "sell": 250
   },
-  "Obsidian Shard": {
+  "Obsidian_Shard": {
     "type": "rare",
     "buy": 3800,
     "sell": 50
   },
-  "Tempered Glass Vial": {
+  "Tempered_Glass_Vial": {
     "type": "rare",
     "buy": 370,
     "sell": 50
   },
-  "Leather Square": {
+  "Leather_Square": {
     "type": "rare",
     "buy": 210,
     "sell": 110
   },
-  "Elonian Leather Square": {
+  "Elonian_Leather_Square": {
     "type": "rare",
     "buy": 550,
     "sell": 50
   },
-  "Vial of Ink": {
+  "Vial_of_Ink": {
     "type": "rare",
     "buy": 550,
     "sell": 50
   },
-  "Roll of Parchment": {
+  "Roll_of_Parchment": {
     "type": "rare",
     "buy": 170,
     "sell": 70
   },
-  "Roll of Vellum": {
+  "Roll_of_Vellum": {
     "type": "rare",
     "buy": 440,
     "sell": 50
   },
-  "Spiritwood Plank": {
+  "Spiritwood_Plank": {
     "type": "rare",
     "buy": 120,
     "sell": 50
   },
-  "Amber Chunk": {
+  "Amber_Chunk": {
     "type": "rare",
     "buy": 800,
     "sell": 50
   },
-  "Jadeite Shard": {
+  "Jadeite_Shard": {
     "type": "rare",
     "buy": 1300,
     "sell": 50
