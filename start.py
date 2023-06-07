@@ -86,9 +86,9 @@ def run_process(screenshot):
     
 def display_results(item_name:str, materials:list[dict]):
     display_name = item_name.replace("_", " ")
-    print(f"{display_name}: \033[96mCommon materials:\033[00m ", end="") 
+    print(display_name + Fore.CYAN + " Common materials: " + Style.RESET_ALL, end="") 
     print(*(f"{mat.get('average_count')} {mat.get('item_name')}" for mat in materials if mat.get("type") == "common"), sep=" or ", end=". ")
-    print("\033[95mRare materials:\033[00m ", end="")
+    print(Fore.MAGENTA + "Rare materials: " + Style.RESET_ALL, end="")
     print(*(f"{mat.get('average_count')} {mat.get('item_name')}" for mat in materials if mat.get("type") == "rare"), sep=" or ")
 
 def on_key_press(key):
