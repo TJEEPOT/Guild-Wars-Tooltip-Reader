@@ -20,21 +20,25 @@ import get_wiki_info as wiki_lookup
 import transfer_data
 import queue
 import threading
-from colorama import just_fix_windows_console
-
+from colorama import Fore, Back, Style
 
 from pynput import keyboard
 
 def run_process(screenshot):
     # Process the screenshot to extract the tooltip
+    if debug:
+        print("Performing crop on screenshot")
     try:
         tooltip_image = grab.get_tooltip(screenshot)
     except ValueError as e:
         print(f"{e} Try again.")
         return None
     
+    # Process the tooltip image to extract the item name
     if debug:
-        print("Got tooltip. Performing crop and OCR...")
+        print("Performing OCR on screenshot.")    
+    tooltip_text = grab.perform_ocr(tooltip_image) # add tesserect install location as parameter, if it's non-standard
+    item_name = wiki_lookup.transform_tooltip_to_wiki_name(tooltip_text)
 
     # Process the tooltip to extract the item name
     text = grab.perform_ocr(tooltip_image) # add your tesserect install location as parameter, if it's non-standard
@@ -113,7 +117,7 @@ def on_key_press(key):
     if key == keyboard.Key.f5:
         # Get the item name from in-game
         screenshot = grab.take_screenshot()
-        print("Got screenshot.")
+        print("Captured screenshot.")
         request_queue.put(screenshot)
 
 def screenshot_processor(queue):
@@ -123,7 +127,7 @@ def screenshot_processor(queue):
             break
         else:
             if debug:
-                print(f'Processing Screenshot')
+                print(f'Processing captured screenshot')
             run_process(screenshot)
 
 ############################################################
