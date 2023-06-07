@@ -84,7 +84,6 @@ def run_process(screenshot):
         
         for page in pages:
             materials = wiki_lookup.get_materials_from_page(page["response"])
-
             # Save the results into the salvage dict
             if debug:
                 print("Adding item to salvage list.")
@@ -94,11 +93,10 @@ def run_process(screenshot):
             display_results(page["page_name"], materials["materials"])
     
 def display_results(item_name:str, materials:list[dict]):
-    display_name = item_name.replace("_", " ")
-    print(display_name + Fore.CYAN + " Common materials: " + Style.RESET_ALL, end="") 
-    print(*(f"{mat.get('average_count')} {mat.get('item_name')}" for mat in materials if mat.get("type") == "common"), sep=" or ", end=". ")
+    print(item_name.replace("_", " ") + Fore.CYAN + " Common materials: " + Style.RESET_ALL, end="") 
+    print(*(f"{mat.get('average_count')} {mat.get('material_name').replace('_', ' ')}" for mat in materials if mat.get("type") == "common"), sep=" or ", end=". ")
     print(Fore.MAGENTA + "Rare materials: " + Style.RESET_ALL, end="")
-    print(*(f"{mat.get('average_count')} {mat.get('item_name')}" for mat in materials if mat.get("type") == "rare"), sep=" or ")
+    print(*(f"{mat.get('average_count')} {mat.get('material_name').replace('_', ' ')}" for mat in materials if mat.get("type") == "rare"), sep=" or ")
 
 def display_material(item_name:str, material:dict):
     display_name = item_name.replace("_", " ")

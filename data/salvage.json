@@ -2,17 +2,17 @@
   "Margonite_Armor": {
     "materials": [
       {
-        "item_name": "Iron Ingots",
+        "material_name": "Iron_Ingot",
         "type": "common",
         "average_count": 0
       },
       {
-        "item_name": "Tanned Hide Squares",
+        "material_name": "Tanned_Hide_Square",
         "type": "common",
         "average_count": 0
       },
       {
-        "item_name": "Steel Ingots",
+        "material_name": "Steel_Ingot",
         "type": "rare",
         "average_count": 0
       }
@@ -21,12 +21,12 @@
   "Aureate_Aegis": {
     "materials": [
       {
-        "item_name": "Iron Ingots",
+        "material_name": "Iron_Ingot",
         "type": "common",
         "average_count": 0
       },
       {
-        "item_name": "Steel Ingots",
+        "material_name": "Steel_Ingot",
         "type": "rare",
         "average_count": 0
       }
@@ -35,17 +35,17 @@
   "Elonian_Daggers_(common)": {
     "materials": [
       {
-        "item_name": "Iron Ingots",
+        "material_name": "Iron_Ingot",
         "type": "common",
         "average_count": 0
       },
       {
-        "item_name": "Wood Plank",
+        "material_name": "Wood_Plank",
         "type": "common",
         "average_count": 0
       },
       {
-        "item_name": "Steel Ingots",
+        "material_name": "Steel_Ingot",
         "type": "rare",
         "average_count": 0
       }
@@ -54,17 +54,17 @@
   "Elonian_Daggers_(uncommon)": {
     "materials": [
       {
-        "item_name": "Iron Ingots",
+        "material_name": "Iron_Ingot",
         "type": "common",
         "average_count": 0
       },
       {
-        "item_name": "Wood Planks",
+        "material_name": "Wood_Plank",
         "type": "common",
         "average_count": 0
       },
       {
-        "item_name": "Steel Ingots",
+        "material_name": "Steel_Ingot",
         "type": "rare",
         "average_count": 0
       }
@@ -73,17 +73,17 @@
   "Elonian_Daggers_(rare)": {
     "materials": [
       {
-        "item_name": "Iron Ingots",
+        "material_name": "Iron_Ingot",
         "type": "common",
         "average_count": 0
       },
       {
-        "item_name": "Wood Plank",
+        "material_name": "Wood_Plank",
         "type": "common",
         "average_count": 0
       },
       {
-        "item_name": "Steel Ingots",
+        "material_name": "Steel_Ingot",
         "type": "rare",
         "average_count": 0
       }
@@ -92,12 +92,12 @@
   "Water_Staff_(Canthan)": {
     "materials": [
       {
-        "item_name": "Iron Ingots",
+        "material_name": "Iron_Ingot",
         "type": "common",
         "average_count": 0
       },
       {
-        "item_name": "Steel Ingots",
+        "material_name": "Steel_Ingot",
         "type": "rare",
         "average_count": 0
       }
@@ -106,22 +106,22 @@
   "Water_Staff_(core)": {
     "materials": [
       {
-        "item_name": "Iron Ingots",
+        "material_name": "Iron_Ingot",
         "type": "common",
         "average_count": 0
       },
       {
-        "item_name": "Pile of Glittering Dust",
+        "material_name": "Pile_of_Glittering_Dust",
         "type": "common",
         "average_count": 0
       },
       {
-        "item_name": "Wood Planks",
+        "material_name": "Wood_Plank",
         "type": "common",
         "average_count": 0
       },
       {
-        "item_name": "Steel Ingots",
+        "material_name": "Steel_Ingot",
         "type": "rare",
         "average_count": 0
       }
@@ -130,7 +130,7 @@
   "Water_Staff_(Tyrian)": {
     "materials": [
       {
-        "item_name": "Wood Planks",
+        "material_name": "Wood_Plank",
         "type": "common",
         "average_count": 0
       }

@@ -23,19 +23,23 @@ def transform_tooltip_to_wiki_name(text) -> str:
     item_name = text.partition("\n")[0]  # Extract the first line of the tooltip text
     return format_item_to_wiki_name(item_name)
 
-def format_item_to_wiki_name(item_name):
+def format_item_to_wiki_name(item_name:str):
     # Remove numbers from the beginning of the first line if they exist
     new_item_name = re.sub(r"(.*\d)\s*", "", item_name)
 
     # Remove 's' characters from the end of each word if a number was found
     if item_name != new_item_name:
-        words = new_item_name.split()
-        processed_words = [re.sub(r"(s)\b", "", word) for word in words]
-        item_name = " ".join(processed_words)
+        item_name = remove_s_characters(item_name)
 
     wiki_name = item_name.replace(" ", "_") # Adjust the item name to be in line with what's expected for the wiki
     return wiki_name
 
+def remove_s_characters(input_string:str, untouched_words=[]):
+    words = input_string.split()
+    processed_words = [re.sub(r"(s)\b", "", word) for word in words if word not in untouched_words]
+    output_string = " ".join(processed_words)
+    return output_string
+    
 
 def get_requested_page(pagename) -> list[dict[str:str, str:str]]:
     """Takes the name of a wiki page (e.g. Great_Axe) and returns a list of dicts, where each dict has the fields "page_name" and "response". This function correctly handles disambiguation pages by searching and returning the details of every page linked on the disambiguation page, within that list."""
@@ -108,7 +112,10 @@ def _get_materials(row, material_type) -> list[dict]:
         for mat in mats:
             if (mat.text != None) and (mat.text != "") and (mat.text != " "):
                 count = 0 # TODO: grab the average count from the page around here.
-                materials.append({"item_name":mat.text, "type":material_type, "average_count":count}) # Get the text content of the <a> tag
+                untouched_words = ["Monstrous", "Glass"] # don't want to remove the 's' from the end of these
+                material_name = remove_s_characters(mat.text, untouched_words)
+                material_name = material_name.replace(" ", "_")
+                materials.append({"material_name":material_name, "type":material_type, "average_count":count}) # Get the text content of the <a> tag
     return materials
 
 if __name__ == "__main__":
