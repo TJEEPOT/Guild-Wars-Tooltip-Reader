@@ -40,12 +40,17 @@ def run_process(screenshot):
     tooltip_text = grab.perform_ocr(tooltip_image) # add tesserect install location as parameter, if it's non-standard
     item_name = wiki_lookup.transform_tooltip_to_wiki_name(tooltip_text)
 
-    # Process the tooltip to extract the item name
-    text = grab.perform_ocr(tooltip_image) # add your tesserect install location as parameter, if it's non-standard
-    item_name = wiki_lookup.transform_tooltip_to_wiki_name(text)
+    # Check if the item is in the materials dict (If so, treat it as a material).
+    print(f"item name: {item_name}")
+    print(f"material: {materials_dict.get('item_name')}")
+    if item_name in materials_dict:
+        if debug:
+            print("Found item in materials dict.")
+        material = materials_dict.get(item_name)
+        display_material(item_name, material)
 
     # Check if the item exists in the disambiguation dict
-    if item_name in disambiguation_dict:
+    elif item_name in disambiguation_dict:
         # If it does exist, get the data from the salvage dict
         if debug:
             print("Found item details in disambiguation list.")
@@ -95,6 +100,12 @@ def display_results(item_name:str, materials:list[dict]):
     print(Fore.MAGENTA + "Rare materials: " + Style.RESET_ALL, end="")
     print(*(f"{mat.get('average_count')} {mat.get('item_name')}" for mat in materials if mat.get("type") == "rare"), sep=" or ")
 
+def display_material(item_name:str, material:dict):
+    display_name = item_name.replace("_", " ")
+    print(Back.WHITE + Fore.BLACK + display_name, end=" ")
+    print("(Common)." if material.get("type") == "common" else Fore.BLUE + "(Rare)." + Fore.BLACK if material.get("type") == "Rare" else "(N/A).", end=" ")
+    print(f"Last recorded prices: Buy: {material.get('buy')}G, Sell: {material.get('sell')}G." + Style.RESET_ALL)
+
 def on_key_press(key):
     if key == keyboard.Key.f6:
         # Save the data collected to disk.
@@ -133,10 +144,6 @@ def screenshot_processor(queue):
 ############################################################
 # Enable debug to get additional test messages.
 debug = False
-
-# Fix ANSI color codes on Windows 10 or higher:
-just_fix_windows_console()
-
 # Create a queue to store the requests
 request_queue = queue.Queue()
 
